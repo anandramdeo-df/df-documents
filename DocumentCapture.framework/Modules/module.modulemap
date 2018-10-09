@@ -1,0 +1,11 @@
+framework module DocumentCapture {
+  umbrella header "DocumentCapture.h"
+
+  export *
+  module * { export * }
+}
+
+module DocumentCapture.Swift {
+    header "DocumentCapture-Swift.h"
+    requires objc
+}
