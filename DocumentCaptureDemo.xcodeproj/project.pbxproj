@@ -302,6 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M8A7BYS443;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -312,10 +313,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.testingTheCameraFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.df.documentCaptureSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e49b724-3b77-440a-a9e5-46e60261eaea";
-				PROVISIONING_PROFILE_SPECIFIER = RanosysWildcardDev;
+				PROVISIONING_PROFILE = "b330748b-de6a-4d44-bed6-2ce9e18fe911";
+				PROVISIONING_PROFILE_SPECIFIER = DocumentCaptureSDKDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,8 +326,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = M8A7BYS443;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -337,10 +340,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.testingTheCameraFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.df.documentCaptureSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e49b724-3b77-440a-a9e5-46e60261eaea";
-				PROVISIONING_PROFILE_SPECIFIER = RanosysWildcardDev;
+				PROVISIONING_PROFILE = "d0240ff6-5d5e-4257-af5c-5d797daea943";
+				PROVISIONING_PROFILE_SPECIFIER = DocumentCaptureSDKInHouse;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
