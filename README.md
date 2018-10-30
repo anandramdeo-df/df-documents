@@ -5,7 +5,7 @@ This SDK based on AVFoundationKit and OpenCV which is been created to scan, capt
 - Capture Document from Front and Back
 - Crop with Auto-Edge-Detection
 
-This SDK is created to capture the snapshot of document via scan mode, even you get the functionality of auto-edge-detection, so that you can crop the images more accurately.
+Sole purpose of this SDK is to capture the snapshot of document via scan mode, even you get the functionality of auto-edge-detection, so that you can crop the images more accurately.
 
 
 <b>You can achieve the functionality with easy integration of following steps:</b>
