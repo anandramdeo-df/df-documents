@@ -34,16 +34,6 @@ Sole purpose of this SDK is to capture the snapshot of document via scan mode, e
         }
 <br>
 <br>
-<b>More Details( Sample Code Repository):</b>
-
-You can also take help from github repository including the working demo of `DocumentCapture` SDK.
-
-https://github.com/anandramdeo-df/df-documents
-
-<b>Note:</b> Start the capture with turning `is capture back` ON/ OFF.
-
-<br>
-<br>
 <p align="left">
 <img src="images/document-capture/start_page.jpg" width="200"/>
 <img src="images/document-capture/user_guide_front.jpg" width="200"/>
@@ -59,3 +49,11 @@ Repeat the same procedure to capture the back of document as well.
 <img src="images/document-capture/captured_image.jpg" width="200"/>
 
 ---
+<br>
+<b>More Details( Sample Code Repository):</b>
+
+You can also take help from github repository including the working demo of `DocumentCapture` SDK.
+
+https://github.com/anandramdeo-df/df-documents
+
+<b>Note:</b> Start the capture with turning `is capture back` ON/ OFF.
