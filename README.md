@@ -50,6 +50,32 @@ Repeat the same procedure to capture the back of document as well.
 
 <i>Just access the properties mentioned in the SDK. Have a look at the sample below:</i>
 
+        let vc = DocumentCapture.sharedInstance
+        
+        // Check whether clicking back or not
+        vc.backEnable = true
+        
+        vc.globalBGColor = #colorLiteral(red: 0.9137254902, green: 0.3921568627, blue: 0.3647058824, alpha: 1)
+        vc.buttonsCornerRadius = 5
+        vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        vc.messagelTextColor = UIColor.black
+        vc.titleMessageColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.navigationTitleColor = UIColor.white
+        vc.navigationBarColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        vc.titleNavigationFront = "Front"
+        vc.titleNavigationBack = "Back"
+        vc.guidanceFrontTitleMessage = "Scan Front of Asset"
+        vc.guidanceFrontUsageMessage = "Take front photo of your ID by holding your phone parallel to it."
+        vc.guidanceBackTitleMessage = "Scan Back of Asset"
+        vc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
+        
+        vc.passImage = { frontImage, backImage in
+            self.updateImages(image1: frontImage, image2: backImage)
+            self.dismiss(animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
+
 Updated UI output would be:
 <br>
 <p align="left">
