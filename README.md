@@ -16,22 +16,18 @@ Sole purpose of this SDK is to capture the snapshot of document via scan mode, e
 
 - And instantiate the view with following code.
 
-        if let vc = GuidanceViewController.storyboardInstance() {
-            vc.frontNavTitle = "Front Scan"
-            vc.frontTitle = "Scan the front"
-            vc.frontMessage = "Please Scan the front of the document."
-            vc.backEnable = captureBackToggle.isOn
-            vc.passImage = { frontImage, backImage in
-                self.dismiss(animated: true, completion: nil)
+        let vc = DocumentCapture.sharedInstance
+        
+        // Check whether clicking back or not
+        vc.backEnable = true
+        vc.navigationBarColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
-                // Play with frontImage and backImage here
-                // Code Here
-                // ...
-                
-           }
-            let navVc = UINavigationController(rootViewController: vc)
-            present(navVc, animated: true, completion: nil)
+        vc.passImage = { frontImage, backImage in
+            self.updateImages(image1: frontImage, image2: backImage)
+            self.dismiss(animated: true, completion: nil)
         }
+        present(vc, animated: true, completion: nil)
+
 <br>
 <br>
 <p align="left">
