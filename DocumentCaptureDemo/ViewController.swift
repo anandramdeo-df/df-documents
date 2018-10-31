@@ -10,7 +10,7 @@ import UIKit
 import DocumentCapture
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var captureBackToggle: UISwitch!
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var backImage: UIImageView!
@@ -19,39 +19,77 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func onClick(_ sender: Any) {
-        if let vc = GuidanceViewController.storyboardInstance() {
-            vc.frontNavTitle = "Front Scan"
-            vc.frontTitle = "Scan the front"
-            vc.frontMessage = "Please Scan the front of the document."
-            vc.backEnable = captureBackToggle.isOn
-            vc.passImage = { frontImage, backImage in
-                
-                self.updateImages(image1: frontImage, image2: backImage)
-                self.dismiss(animated: true, completion: nil)
-            }
-            let navVc = UINavigationController(rootViewController: vc)
-            present(navVc, animated: true, completion: nil)
+       
+        // ***
+        // Open configured view
+        // ***
+        
+        // self.openViewWithConfiguration()
+       
+        
+        // ***
+        // Open default view
+        // ***
+        
+        let vc = DocumentCapture.sharedInstance
+        
+        // Check whether clicking back or not
+        vc.backEnable = captureBackToggle.isOn
+        vc.navigationBarColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+        vc.passImage = { frontImage, backImage in
+            self.updateImages(image1: frontImage, image2: backImage)
+            self.dismiss(animated: true, completion: nil)
         }
+        present(vc, animated: true, completion: nil)
     }
     
     func updateImages(image1: UIImage, image2: UIImage?) {
         frontImage.layer.borderWidth = 1
         frontImage.layer.borderColor = UIColor.black.cgColor
         frontImage.image = image1
-    
+        
         if image2 != nil {
             backImage.layer.borderWidth = 1
             backImage.layer.borderColor = UIColor.black.cgColor
             backImage.image = image2
-
         }
     }
+    
+    func openViewWithConfiguration() {
+        let vc = DocumentCapture.sharedInstance
+        
+        // Check whether clicking back or not
+        vc.backEnable = captureBackToggle.isOn
+        
+        vc.globalBGColor = #colorLiteral(red: 0.9137254902, green: 0.3921568627, blue: 0.3647058824, alpha: 1)
+        vc.buttonsCornerRadius = 5
+        vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        vc.messagelTextColor = UIColor.black
+        vc.titleMessageColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.navigationTitleColor = UIColor.white
+        vc.navigationBarColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        vc.titleNavigationFront = "Front"
+        vc.titleNavigationBack = "Back"
+        vc.guidanceFrontTitleMessage = "Scan Front of Asset"
+        vc.guidanceFrontUsageMessage = "Take front photo of your ID by holding your phone parallel to it."
+        vc.guidanceBackTitleMessage = "Scan Back of Asset"
+        vc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
+        
+        vc.passImage = { frontImage, backImage in
+            self.updateImages(image1: frontImage, image2: backImage)
+            self.dismiss(animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 

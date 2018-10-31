@@ -220,6 +220,16 @@ SWIFT_CLASS("_TtC15DocumentCapture8CropView")
 @end
 
 
+SWIFT_CLASS("_TtC15DocumentCapture15DocumentCapture")
+@interface DocumentCapture : UINavigationController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=5.0);
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC15DocumentCapture22GuidanceViewController")
 @interface GuidanceViewController : UIViewController
 - (void)viewDidLoad;
