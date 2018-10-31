@@ -1,4 +1,4 @@
-# DocumentCapture SDK
+# df-documents (Document Capture SDK)
 
 This SDK based on AVFoundationKit and OpenCV which is been created to scan, capture & crop the document.
 
@@ -55,9 +55,8 @@ Updated UI output would be:
 <p align="left">
 <img src="images/config/user_guide_front.jpg" width="200"/> 
 <img src="images/config/click_front.jpg" width="200"/>
-<img src="images/config/crop.jpg" width="200"/>
 <img src="images/config/user_guide_back.jpg" width="200"/>
-<img src="images/config/click_back.jpg" width="200"/>
+<img src="images/config/crop.jpg" width="200"/>
   
 <br>
 
