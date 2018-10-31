@@ -20,7 +20,7 @@ Sole purpose of this SDK is to capture the snapshot of document via scan mode, e
         
         // Check whether clicking back or not
         vc.backEnable = true
-        vc.navigationBarColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        vc.navigationBarColor = .white
 
         vc.passImage = { frontImage, backImage in
             self.updateImages(image1: frontImage, image2: backImage)
