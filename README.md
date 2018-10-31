@@ -44,6 +44,23 @@ Repeat the same procedure to capture the back of document as well.
 <img src="images/document-capture/crop_back.jpg" width="200"/>
 <img src="images/document-capture/captured_image.jpg" width="200"/>
 
+<br>
+<br>
+<b>You can cutomize the color and theme of the SDK's view according to your projects user-experience.</b> 
+
+<i>Just access the properties mentioned in the SDK. Have a look at the sample below:</i>
+
+Updated UI output would be:
+<br>
+<p align="left">
+<img src="images/config/user_guide_front.jpg" width="200"/> 
+<img src="images/config/click_front.jpg" width="200"/>
+<img src="images/config/crop.jpg" width="200"/>
+<img src="images/config/user_guide_back.jpg" width="200"/>
+<img src="images/config/click_back.jpg" width="200"/>
+  
+<br>
+
 ---
 <br>
 <b>More Details( Sample Code Repository):</b>
