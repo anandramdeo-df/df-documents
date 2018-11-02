@@ -92,7 +92,81 @@ Updated UI output would be:
   
 <br>
 
+<h2>Here are the list of all the configurable properties, you may need:</h2>
+
+    /** This property change the background colour of the guidance screen. */
+    public var globalBGColor: UIColor
+
+    /** This property change the color of the title of the navigation bar. */
+    public var navigationTitleColor: UIColor
+
+    /** This property change the color of the navigation bar. */
+    public var navigationBarColor: UIColor
+
+    /** This propery change the colour of title of guidance screens. */
+    public var titleTextColor: UIColor
+
+    /** This property change the text colour of the framework. */
+    public var messagelTextColor: UIColor
+
+    /** backEnable is BOOL property if you want to click front and back image of document make backEnable to true else make is false DEFAULT it is TRUE. */
+    public var backEnable: Bool
+
+    /** This property change the colour of the button */
+    public var globalButtonColor: UIColor
+
+    /** This property change the colour of the cancle button */
+    public var globalCancelButtonColor: UIColor
+
+    /** This property change the text color of the button.*/
+    public var buttonTitleColor: UIColor
+
+    /** This property change the text color of the cancle button.*/
+    public var buttonCancelTitleColor: UIColor
+
+    /** This property change the corner radius of the buttons */
+    public var buttonsCornerRadius: CGFloat
+
+    /** This property change the color of the border global button. */
+    public var globalButtonBorderColor: UIColor
+
+    /** This property change the color of the border global option button. */
+    public var globalCancelButtonBorderColor: UIColor
+
+    /** Change the navigation title of the front guidance view controller.*/
+    public var titleNavigationFront: String?
+
+    /** Change the title of the front guidance view controller.*/
+    public var guidanceFrontTitleMessage: String?
+
+    /** Change the usage message of the front guidance view controller.*/
+    public var guidanceFrontUsageMessage: String?
+
+    /** Change the navigation title of the back guidance view controller.*/
+    public var titleNavigationBack: String?
+
+    /** Change the title of the back guidance view controller.*/
+    public var guidanceBackTitleMessage: String?
+
+    /** Change the usage message of the back guidance view controller.*/
+    public var guidanceBackUsageMessage: String?
+
+    /** These closure return the front image and back image clicked by the user, back image is optional.*/
+    public var passImage: ((UIImage, UIImage?) -> Void)?
+
+    public var boldFont: String
+
+    public var regularFont: String
+
+    public var mediumFont: String
+
+    public var lightFont: String
+
+    public var italicFont: String
+
+<br>
 ---
+
 <br>
 <b>More Details( Sample Code Repository):</b>
 
