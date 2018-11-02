@@ -163,9 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
-@import AVFoundation;
 @import CoreGraphics;
-@import CoreMedia;
 @import UIKit;
 #endif
 
@@ -186,24 +184,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 @class NSBundle;
 @class NSCoder;
-
-SWIFT_CLASS("_TtC15DocumentCapture20CameraViewController")
-@interface CameraViewController : UIViewController
-- (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)animated;
-- (void)viewWillAppear:(BOOL)animated;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class AVCapturePhotoOutput;
-@class AVCaptureResolvedPhotoSettings;
-@class AVCaptureBracketedStillImageSettings;
-
-@interface CameraViewController (SWIFT_EXTENSION(DocumentCapture)) <AVCapturePhotoCaptureDelegate>
-- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
-@end
-
 
 SWIFT_CLASS("_TtC15DocumentCapture23CropImageViewController")
 @interface CropImageViewController : UIViewController
@@ -230,17 +210,11 @@ SWIFT_CLASS("_TtC15DocumentCapture15DocumentCapture")
 @end
 
 
-SWIFT_CLASS("_TtC15DocumentCapture22GuidanceViewController")
-@interface GuidanceViewController : UIViewController
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+
+
+@interface UINavigationController (SWIFT_EXTENSION(DocumentCapture))
+@property (nonatomic, readonly) BOOL shouldAutorotate;
 @end
-
-
-
-
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

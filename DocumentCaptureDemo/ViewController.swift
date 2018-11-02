@@ -69,12 +69,12 @@ class ViewController: UIViewController {
         // Check whether clicking back or not
         vc.backEnable = captureBackToggle.isOn
         
+        vc.regularFont = "Marker Felt"
+        vc.boldFont = "Marker Felt"
+        
         vc.globalBGColor = #colorLiteral(red: 0.9137254902, green: 0.3921568627, blue: 0.3647058824, alpha: 1)
-        vc.buttonsCornerRadius = 5
-        vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
         vc.messagelTextColor = UIColor.black
-        vc.titleMessageColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.titleTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         vc.navigationTitleColor = UIColor.white
         vc.navigationBarColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
         vc.titleNavigationFront = "Front"
@@ -83,6 +83,12 @@ class ViewController: UIViewController {
         vc.guidanceFrontUsageMessage = "Take front photo of your ID by holding your phone parallel to it."
         vc.guidanceBackTitleMessage = "Scan Back of Asset"
         vc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
+        
+        vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        vc.buttonsCornerRadius = 5
+        vc.globalButtonBorderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        vc.globalCancelButtonBorderColor = #colorLiteral(red: 0.0317231603, green: 0.008417122066, blue: 0.003364683827, alpha: 1)
         
         vc.passImage = { frontImage, backImage in
             self.updateImages(image1: frontImage, image2: backImage)

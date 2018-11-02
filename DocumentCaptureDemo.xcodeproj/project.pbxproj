@@ -12,8 +12,8 @@
 		414D278E216CDF8500A51B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414D278C216CDF8500A51B72 /* Main.storyboard */; };
 		414D2790216CDF8600A51B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414D278F216CDF8600A51B72 /* Assets.xcassets */; };
 		414D2793216CDF8600A51B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414D2791216CDF8600A51B72 /* LaunchScreen.storyboard */; };
-		C485B0302189833400127208 /* DocumentCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C485B02F2189833400127208 /* DocumentCapture.framework */; };
-		C485B0312189833400127208 /* DocumentCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C485B02F2189833400127208 /* DocumentCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4962197218C6A2000C70AD4 /* DocumentCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4962196218C6A2000C70AD4 /* DocumentCapture.framework */; };
+		C4962198218C6A2000C70AD4 /* DocumentCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4962196218C6A2000C70AD4 /* DocumentCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C485B0312189833400127208 /* DocumentCapture.framework in Embed Frameworks */,
+				C4962198218C6A2000C70AD4 /* DocumentCapture.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,8 @@
 		414D278F216CDF8600A51B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		414D2792216CDF8600A51B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		414D2794216CDF8600A51B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C485B02F2189833400127208 /* DocumentCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentCapture.framework; sourceTree = "<group>"; };
+		C4962194218C6A0900C70AD4 /* DocumentCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentCapture.framework; path = ../../../../Downloads/DocumentCapture.framework; sourceTree = "<group>"; };
+		C4962196218C6A2000C70AD4 /* DocumentCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentCapture.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C485B0302189833400127208 /* DocumentCapture.framework in Frameworks */,
+				C4962197218C6A2000C70AD4 /* DocumentCapture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,9 +57,10 @@
 		414D277C216CDF8500A51B72 = {
 			isa = PBXGroup;
 			children = (
-				C485B02F2189833400127208 /* DocumentCapture.framework */,
+				C4962196218C6A2000C70AD4 /* DocumentCapture.framework */,
 				414D2787216CDF8500A51B72 /* DocumentCaptureDemo */,
 				414D2786216CDF8500A51B72 /* Products */,
+				C4962193218C6A0900C70AD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +83,14 @@
 				414D2794216CDF8600A51B72 /* Info.plist */,
 			);
 			path = DocumentCaptureDemo;
+			sourceTree = "<group>";
+		};
+		C4962193218C6A0900C70AD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4962194218C6A0900C70AD4 /* DocumentCapture.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
