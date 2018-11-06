@@ -84,6 +84,8 @@ class ViewController: UIViewController {
         vc.guidanceBackTitleMessage = "Scan Back of Asset"
         vc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
         
+        vc.backImageColor = UIColor.white
+        
         vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
         vc.buttonsCornerRadius = 5

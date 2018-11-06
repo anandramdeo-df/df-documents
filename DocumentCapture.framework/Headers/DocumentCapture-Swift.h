@@ -212,6 +212,8 @@ SWIFT_CLASS("_TtC15DocumentCapture15DocumentCapture")
 
 
 
+
+
 @interface UINavigationController (SWIFT_EXTENSION(DocumentCapture))
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @end
