@@ -10,23 +10,51 @@ Sole purpose of this SDK is to capture the snapshot of document via scan mode, e
 
 <b>You can achieve the functionality with easy integration of following steps:</b>
 
-- Add the SDK to your project, don't forget to add add it in `Embedded Binaries`.
+- In a new terminal window, run `pod install --repo-update` to install and update. Get [Cocoapods](https://cocoapods.org/)
+*you can skip this case if you have updated pod in you mac.*
+
+- Create the podfile in your project.
+```
+pod init
+```
+
+- Open the pod file from directory and add pods in podfile.
+```
+pod 'df-document-capture', '~> 1.0'
+```
+
+- Run command to install
+```
+pod install
+```
+<i>Now close the xcode project and open prj.xcworkspace instead.</i>
+
+
+- Add your org's `DCAccessToken` token in your `Info.plist` file.
 
 - `import DocumentCapture` in your `UIViewController` file where you want to use this feature.
 
 - And instantiate the view with following code.
 
-        let vc = DocumentCapture.sharedInstance
+        DocumentCapture.sharedInstance.storyboardInstance(success: { [weak self] viewController in
         
-        // Check whether clicking back or not
-        vc.backEnable = true
-        vc.navigationBarColor = .white
+            // Check whether clicking back or not
+            DocumentCapture.sharedInstance.backEnable = true
+            DocumentCapture.sharedInstance.navigationBarColor = .white
 
-        vc.passImage = { frontImage, backImage in
-            self.updateImages(image1: frontImage, image2: backImage)
+            DispatchQueue.main.async {
+                if let vc = viewController {
+                    self?.present(vc, animated: true, completion: nil)
+                    }
+                    }
+            }, failure: { (error) in
+                print(error?.userInfo ?? "Your api token is not valid")
+        })
+
+        DC.passImage = { img1, img2 in
+            self.updateImages(image1: frontImage, image2: backImage)    
             self.dismiss(animated: true, completion: nil)
         }
-        present(vc, animated: true, completion: nil)
 
 <br>
 <br>
@@ -50,37 +78,47 @@ Repeat the same procedure to capture the back of document as well.
 
 <i>Just access the properties mentioned in the SDK. Have a look at the sample below:</i>
 
-        let vc = DocumentCapture.sharedInstance
+        let dc = DocumentCapture.sharedInstance
         
-        // Check whether clicking back or not
-        vc.backEnable = captureBackToggle.isOn
+        dc.regularFont = "Marker Felt"
+        dc.boldFont = "Marker Felt"
+        dc.backEnable = true
+        dc.globalBGColor = #colorLiteral(red: 0.9137254902, green: 0.3921568627, blue: 0.3647058824, alpha: 1)
+        dc.buttonsCornerRadius = 5
+        dc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        dc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
+        dc.globalCancelButtonColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        dc.buttonCancelTitleColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
         
-        vc.regularFont = "Marker Felt"
-        vc.boldFont = "Marker Felt"
+        dc.messagelTextColor = UIColor.black
+        dc.titleMessageColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        dc.navigationTitleColor = UIColor.white
+        dc.navigationBarColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
         
-        vc.globalBGColor = #colorLiteral(red: 0.9137254902, green: 0.3921568627, blue: 0.3647058824, alpha: 1)
-        vc.messagelTextColor = UIColor.black
-        vc.titleTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        vc.navigationTitleColor = UIColor.white
-        vc.navigationBarColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
-        vc.titleNavigationFront = "Front"
-        vc.titleNavigationBack = "Back"
-        vc.guidanceFrontTitleMessage = "Scan Front of Asset"
-        vc.guidanceFrontUsageMessage = "Take front photo of your ID by holding your phone parallel to it."
-        vc.guidanceBackTitleMessage = "Scan Back of Asset"
-        vc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
+        dc.titleNavigationFront = "Front"
+        dc.titleNavigationBack = "Back"
+        dc.guidanceFrontTitleMessage = "Scan Front of Asset"
+        dc.guidanceFrontUsageMessage = "Take front photo of your ID by holding your phone parallel to it."
         
-        vc.buttonTitleColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        vc.globalButtonColor = #colorLiteral(red: 0.4039215686, green: 0.7098039216, blue: 0.3647058824, alpha: 1)
-        vc.buttonsCornerRadius = 5
-        vc.globalButtonBorderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        vc.globalCancelButtonBorderColor = #colorLiteral(red: 0.0317231603, green: 0.008417122066, blue: 0.003364683827, alpha: 1)
+        dc.guidanceBackTitleMessage = "Scan Back of Asset"
+        dc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
         
-        vc.passImage = { frontImage, backImage in
+        
+        dc.storyboardInstance(success: { [weak self] viewController in
+            DispatchQueue.main.async {
+                if let vc = viewController {
+                    self?.present(vc, animated: true, completion: nil)
+                }
+            }
+            }, failure: { (error) in
+                print(error?.userInfo ?? "Your api token is not valid")
+        })
+        
+        dc.passImage = { img1, img2 in
             self.updateImages(image1: frontImage, image2: backImage)
             self.dismiss(animated: true, completion: nil)
         }
-        self.present(vc, animated: true, completion: nil)
+
 
 Updated UI output would be:
 <br>
