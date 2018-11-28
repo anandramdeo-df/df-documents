@@ -1,0 +1,11 @@
+framework module DFDocument {
+  umbrella header "DFDocument.h"
+
+  export *
+  module * { export * }
+}
+
+module DFDocument.Swift {
+    header "DFDocument-Swift.h"
+    requires objc
+}

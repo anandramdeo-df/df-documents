@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DocumentCapture
+import DFDocument
 
 class ViewController: UIViewController {
     
@@ -26,29 +26,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onClick(_ sender: Any) {
-       
-        // ***
-        // Open configured view
-        // ***
-        
-        // self.openViewWithConfiguration()
-       
-        
-        // ***
-        // Open default view
-        // ***
-        
-        let vc = DocumentCapture.sharedInstance
-        
-        // Check whether clicking back or not
-        vc.backEnable = captureBackToggle.isOn
-        vc.navigationBarColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-
-        vc.passImage = { frontImage, backImage in
-            self.updateImages(image1: frontImage, image2: backImage)
-            self.dismiss(animated: true, completion: nil)
-        }
-        present(vc, animated: true, completion: nil)
+         self.openViewWithConfiguration()
     }
     
     func updateImages(image1: UIImage, image2: UIImage?) {
@@ -64,9 +42,12 @@ class ViewController: UIViewController {
     }
     
     func openViewWithConfiguration() {
-        let vc = DocumentCapture.sharedInstance
+        let vc = DFDocument.sharedInstance
         
-        // Check whether clicking back or not
+        // ***
+        // Open configured view
+        // ***
+
         vc.backEnable = captureBackToggle.isOn
         
         vc.regularFont = "Marker Felt"
@@ -91,13 +72,21 @@ class ViewController: UIViewController {
         vc.buttonsCornerRadius = 5
         vc.globalButtonBorderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         vc.globalCancelButtonBorderColor = #colorLiteral(red: 0.0317231603, green: 0.008417122066, blue: 0.003364683827, alpha: 1)
+        vc.initialize(success: { [weak self] viewController in
+            DispatchQueue.main.async {
+                if let vc = viewController {
+                    
+                    self?.present(vc, animated: true, completion: nil)
+                }
+            }
+            }, failure: { (error) in
+                print(error?.userInfo ?? "Your api token is not valid")
+        })
         
         vc.passImage = { frontImage, backImage in
             self.updateImages(image1: frontImage, image2: backImage)
             self.dismiss(animated: true, completion: nil)
         }
-        self.present(vc, animated: true, completion: nil)
     }
-    
 }
 

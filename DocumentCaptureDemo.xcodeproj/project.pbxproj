@@ -12,18 +12,18 @@
 		414D278E216CDF8500A51B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414D278C216CDF8500A51B72 /* Main.storyboard */; };
 		414D2790216CDF8600A51B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414D278F216CDF8600A51B72 /* Assets.xcassets */; };
 		414D2793216CDF8600A51B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414D2791216CDF8600A51B72 /* LaunchScreen.storyboard */; };
-		418B126B21918CA0008D3B42 /* DocumentCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418B126A21918CA0008D3B42 /* DocumentCapture.framework */; };
-		418B126C21918CA0008D3B42 /* DocumentCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 418B126A21918CA0008D3B42 /* DocumentCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		416CFB9D21AEAE6700610B90 /* DFDocument.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416CFB9C21AEAE6700610B90 /* DFDocument.framework */; };
+		416CFB9E21AEAE6700610B90 /* DFDocument.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 416CFB9C21AEAE6700610B90 /* DFDocument.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		414D279D216CDFCE00A51B72 /* Embed Frameworks */ = {
+		416CFB9F21AEAE6700610B90 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				418B126C21918CA0008D3B42 /* DocumentCapture.framework in Embed Frameworks */,
+				416CFB9E21AEAE6700610B90 /* DFDocument.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		414D278F216CDF8600A51B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		414D2792216CDF8600A51B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		414D2794216CDF8600A51B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		418B126A21918CA0008D3B42 /* DocumentCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentCapture.framework; sourceTree = "<group>"; };
+		416CFB9C21AEAE6700610B90 /* DFDocument.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DFDocument.framework; sourceTree = "<group>"; };
 		C4962194218C6A0900C70AD4 /* DocumentCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentCapture.framework; path = ../../../../Downloads/DocumentCapture.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				418B126B21918CA0008D3B42 /* DocumentCapture.framework in Frameworks */,
+				416CFB9D21AEAE6700610B90 /* DFDocument.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +57,7 @@
 		414D277C216CDF8500A51B72 = {
 			isa = PBXGroup;
 			children = (
-				418B126A21918CA0008D3B42 /* DocumentCapture.framework */,
+				416CFB9C21AEAE6700610B90 /* DFDocument.framework */,
 				414D2787216CDF8500A51B72 /* DocumentCaptureDemo */,
 				414D2786216CDF8500A51B72 /* Products */,
 				C4962193218C6A0900C70AD4 /* Frameworks */,
@@ -103,7 +103,7 @@
 				414D2781216CDF8500A51B72 /* Sources */,
 				414D2782216CDF8500A51B72 /* Frameworks */,
 				414D2783216CDF8500A51B72 /* Resources */,
-				414D279D216CDFCE00A51B72 /* Embed Frameworks */,
+				416CFB9F21AEAE6700610B90 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
