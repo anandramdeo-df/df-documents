@@ -36,7 +36,7 @@ pod install
 
 - And instantiate the view with following code.
 
-        DocumentCapture.sharedInstance.storyboardInstance(success: { [weak self] viewController in
+        DocumentCapture.sharedInstance.initialize(success: { [weak self] viewController in
         
             // Check whether clicking back or not
             DocumentCapture.sharedInstance.backEnable = true
@@ -104,7 +104,7 @@ Repeat the same procedure to capture the back of document as well.
         dc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
         
         
-        dc.storyboardInstance(success: { [weak self] viewController in
+        dc.initialize(success: { [weak self] viewController in
             DispatchQueue.main.async {
                 if let vc = viewController {
                     self?.present(vc, animated: true, completion: nil)
