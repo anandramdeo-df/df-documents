@@ -20,27 +20,27 @@ pod init
 
 - Open the pod file from directory and add pods in podfile.
 ```
-pod 'df-document-capture', '~> 1.0'
+pod 'DFDocument'
 ```
 
 - Run command to install
 ```
 pod install
 ```
-<i>Now close the xcode project and open prj.xcworkspace instead.</i>
+<i> If any error occure in the process of pod install then try with pod update command. Now close the xcode project and open prj.xcworkspace instead.</i>
 
 
 - Add your org's `DCAccessToken` token in your `Info.plist` file.
 
-- `import DocumentCapture` in your `UIViewController` file where you want to use this feature.
+- `import DFDocument` in your `UIViewController` file where you want to use this feature.
 
 - And instantiate the view with following code.
 
-        DocumentCapture.sharedInstance.initialize(success: { [weak self] viewController in
+        DFDocument.sharedInstance.initialize(success: { [weak self] viewController in
         
             // Check whether clicking back or not
-            DocumentCapture.sharedInstance.backEnable = true
-            DocumentCapture.sharedInstance.navigationBarColor = .white
+            DFDocument.sharedInstance.backEnable = true
+            DFDocument.sharedInstance.navigationBarColor = .white
 
             DispatchQueue.main.async {
                 if let vc = viewController {
@@ -51,7 +51,7 @@ pod install
                 print(error?.userInfo ?? "Your api token is not valid")
         })
 
-        DC.passImage = { img1, img2 in
+        DFDocument.sharedInstance.passImage = { img1, img2 in
             self.updateImages(image1: frontImage, image2: backImage)    
             self.dismiss(animated: true, completion: nil)
         }
@@ -78,7 +78,7 @@ Repeat the same procedure to capture the back of document as well.
 
 <i>Just access the properties mentioned in the SDK. Have a look at the sample below:</i>
 
-        let dc = DocumentCapture.sharedInstance
+        let dc = DFDocument.sharedInstance
         
         dc.regularFont = "Marker Felt"
         dc.boldFont = "Marker Felt"
