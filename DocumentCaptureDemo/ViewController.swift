@@ -72,21 +72,13 @@ class ViewController: UIViewController {
         vc.buttonsCornerRadius = 5
         vc.globalButtonBorderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         vc.globalCancelButtonBorderColor = #colorLiteral(red: 0.0317231603, green: 0.008417122066, blue: 0.003364683827, alpha: 1)
-        vc.initialize(success: { [weak self] viewController in
-            DispatchQueue.main.async {
-                if let vc = viewController {
-                    
-                    self?.present(vc, animated: true, completion: nil)
-                }
-            }
-            }, failure: { (error) in
-                print(error?.userInfo ?? "Your api token is not valid")
+        vc.getCapturedImages(success: { frontImage, backImage  in
+            print(frontImage)
+            print(backImage)
+            
+        }, failure: { (error) in
+            print(error?.userInfo ?? "Your api token is not valid")
         })
-        
-        vc.passImage = { frontImage, backImage in
-            self.updateImages(image1: frontImage, image2: backImage)
-            self.dismiss(animated: true, completion: nil)
-        }
     }
 }
 
