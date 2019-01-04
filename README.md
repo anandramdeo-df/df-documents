@@ -36,25 +36,13 @@ pod install
 
 - And instantiate the view with following code.
 
-        DFDocument.sharedInstance.initialize(success: { [weak self] viewController in
-        
-            // Check whether clicking back or not
-            DFDocument.sharedInstance.backEnable = true
-            DFDocument.sharedInstance.navigationBarColor = .white
-
-            DispatchQueue.main.async {
-                if let vc = viewController {
-                    self?.present(vc, animated: true, completion: nil)
-                    }
-                    }
-            }, failure: { (error) in
-                print(error?.userInfo ?? "Your api token is not valid")
+        DFDocument.sharedInstance.getCapturedImages(success: { frontImage, backImage  in
+            print(frontImage)
+            print(backImage)
+            
+        }, failure: { (error) in
+            print(error?.userInfo ?? "Your api token is not valid")
         })
-
-        DFDocument.sharedInstance.passImage = { img1, img2 in
-            self.updateImages(image1: frontImage, image2: backImage)    
-            self.dismiss(animated: true, completion: nil)
-        }
 
 <br>
 <br>
@@ -103,21 +91,13 @@ Repeat the same procedure to capture the back of document as well.
         dc.guidanceBackTitleMessage = "Scan Back of Asset"
         dc.guidanceBackUsageMessage = "Take back photo of your ID by holding your phone parallel to it."
         
-        
-        dc.initialize(success: { [weak self] viewController in
-            DispatchQueue.main.async {
-                if let vc = viewController {
-                    self?.present(vc, animated: true, completion: nil)
-                }
-            }
-            }, failure: { (error) in
-                print(error?.userInfo ?? "Your api token is not valid")
+        dc.getCapturedImages(success: { frontImage, backImage  in
+            print(frontImage)
+            print(backImage)
+            
+        }, failure: { (error) in
+            print(error?.userInfo ?? "Your api token is not valid")
         })
-        
-        dc.passImage = { img1, img2 in
-            self.updateImages(image1: frontImage, image2: backImage)
-            self.dismiss(animated: true, completion: nil)
-        }
 
 
 Updated UI output would be:
