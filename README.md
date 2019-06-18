@@ -32,6 +32,12 @@ pod install
 
 - Add your org's `DCAccessToken` token in your `Info.plist` file.
 
+- Add an url of the server to communicate with the framework in your `Info.plist` file. Example:
+  ```xml
+  <key>server url</key>
+  <string>http://abc.com/api/</string>
+  ```
+
 - `import DFDocument` in your `UIViewController` file where you want to use this feature.
 
 - And instantiate the view with following code.
