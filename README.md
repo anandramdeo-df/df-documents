@@ -34,7 +34,7 @@ pod install
 
 - Add an url of the server to communicate with the framework in your `Info.plist` file. Example:
   ```xml
-  <key>server url</key>
+  <key>ServerBaseUrl</key>
   <string>http://abc.com/api/</string>
   ```
 
