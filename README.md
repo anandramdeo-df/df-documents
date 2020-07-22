@@ -51,7 +51,10 @@ pod install
         })
 - For offline Passport data extraction.
 
-      DFDocument.sharedInstance.getPassportData(success: { responeDictionary, clickedImage  in
+      let documentCapture = DFDocument.sharedInstance
+      documentCapture.backEnable = false // if only have front image then make backEnable property to false default is true.
+
+      documentCapture.getPassportData(success: { responeDictionary, clickedImage  in
             if let nonOptionalDic = responeDictionary {
                 label.text = "issueCountry: \(nonOptionalDic["issue_country"] ?? ""), \n first-name: \(nonOptionalDic["first_name"] ?? ""),
                 \n middle-name: \(nonOptionalDic["middle_name"] ?? "") \n last name: \(nonOptionalDic["last_name"] ?? ""), \n passport-number:
