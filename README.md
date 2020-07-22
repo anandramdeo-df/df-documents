@@ -52,9 +52,12 @@ pod install
 - For offline Passport data extraction.
 
       DFDocument.sharedInstance.getPassportData(success: { responeDictionary, clickedImage  in
-             label.text = "issueCountry: \(aResponseDict["issue_country"] ?? ""), \n first-name: \(aResponseDict["first_name"] ?? ""), \n middle-name:    
-             \(aResponseDict["middle_name"] ?? "") \n last name: \(aResponseDict["last_name"] ?? ""), \n passport-number: \(aResponseDict["passport_number"] ?? 
-             ""), \n nationality: \(aResponseDict["nationality"] ?? ""), \n DOB: \(aResponseDict["date_of_birth"] ?? ""), \n Gender: \(aResponseDict["gender"] ??                ""), \n expiry-date: \(aResponseDict["expiry_date"] ?? "")"
+            if let nonOptionalDic = responseDict {
+                self?.textTextView.text = "issueCountry: \(nonOptionalDic["issue_country"] ?? ""), \n first-name: \(nonOptionalDic["first_name"] ?? ""),
+                \n middle-name: \(nonOptionalDic["middle_name"] ?? "") \n last name: \(nonOptionalDic["last_name"] ?? ""), \n passport-number:
+                (nonOptionalDic["passport_number"] ?? ""), \n nationality: \(nonOptionalDic["nationality"] ?? ""), \n DOB: \(nonOptionalDic["date_of_birth"] ??
+                ""), \n Gender: \(nonOptionalDic["gender"] ?? ""), \n expiry-date: \(nonOptionalDic["expiry_date"] ?? "")"
+            }
             
         }, failure: { (error) in
             print(error?.userInfo ?? "Your api token is not valid")
