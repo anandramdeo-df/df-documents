@@ -52,8 +52,8 @@ pod install
 - For offline Passport data extraction.
 
       DFDocument.sharedInstance.getPassportData(success: { responeDictionary, clickedImage  in
-            if let nonOptionalDic = responseDict {
-                self?.textTextView.text = "issueCountry: \(nonOptionalDic["issue_country"] ?? ""), \n first-name: \(nonOptionalDic["first_name"] ?? ""),
+            if let nonOptionalDic = responeDictionary {
+                label.text = "issueCountry: \(nonOptionalDic["issue_country"] ?? ""), \n first-name: \(nonOptionalDic["first_name"] ?? ""),
                 \n middle-name: \(nonOptionalDic["middle_name"] ?? "") \n last name: \(nonOptionalDic["last_name"] ?? ""), \n passport-number:
                 (nonOptionalDic["passport_number"] ?? ""), \n nationality: \(nonOptionalDic["nationality"] ?? ""), \n DOB: \(nonOptionalDic["date_of_birth"] ??
                 ""), \n Gender: \(nonOptionalDic["gender"] ?? ""), \n expiry-date: \(nonOptionalDic["expiry_date"] ?? "")"
