@@ -65,6 +65,25 @@ pod install
         }, failure: { (error) in
             print(error?.userInfo ?? "Your api token is not valid")
         })
+        
+ - For offline Emirates ID data extraction.
+
+        let documentCapture = DFDocument.sharedInstance
+        documentCapture.backEnable = true // if only have front image then make backEnable property to false default is true.
+
+        documentCapture.getEmiratedIdData(success: { [weak self] (frontData, backData ,frontImage, backImage)  in
+                    if let frontDataNew = frontData, let backDataNew = backData {
+                        print("Response: front \(frontDataNew)")
+                        print("Response: back \(backDataNew)")
+                    }
+                }, failure: { [weak self] (error) in
+                    if let aError = error {
+                        debugPrint("Error: \(aError.localizedDescription)")
+                        DispatchQueue.main.async {
+                            self?.showAlert(message: aError.localizedDescription)
+                        }
+                    }
+                })
 
 <br>
 <br>
