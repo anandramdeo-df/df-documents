@@ -170,6 +170,9 @@ Updated UI output would be:
 
     /** backEnable is BOOL property if you want to click front and back image of document make backEnable to true else make is false DEFAULT it is TRUE. */
     public var backEnable: Bool
+    
+    /** enableGuidance is BOOL property let you show and hide the guidance screen as per your need, if you want to hide the Guidance screen set this property to       FALSE, DEFAULT it is TRUE.  **/
+    public var enableGuidance: Bool = true
 
     /** This property change the colour of the button */
     public var globalButtonColor: UIColor
