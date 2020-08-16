@@ -173,6 +173,9 @@ Updated UI output would be:
     
     /** enableGuidance is BOOL property let you show and hide the guidance screen as per your need, if you want to hide the Guidance screen set this property to       FALSE, DEFAULT it is TRUE.  **/
     public var enableGuidance: Bool = true
+    
+    /** If Firebase is already configured in your system, then pass TRUE in this key, default value in FALSE. */
+    public var isFirebaseConfigured: Bool = false
 
     /** This property change the colour of the button */
     public var globalButtonColor: UIColor
