@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "DFDocument"
-  spec.version      = "1.0.13"
+  spec.version      = "1.0.14"
   spec.summary      = "This SDK based on AVFoundationKit and OpenCV which is been created to scan, capture & crop the document."
 
   # This description is used to generate tags and improve search results.
@@ -80,9 +80,9 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :http => 'https://github.com/anandramdeo-df/df-documents/releases/download/1.0.13/DFDocument.zip' }
+  spec.source       = { :http => 'https://github.com/anandramdeo-df/df-documents/releases/download/1.0.14/DFDocument.zip' }
   
-  spec.ios.deployment_target = '11.0'
+  spec.ios.deployment_target = '13.0'
   spec.ios.vendored_frameworks = 'DFDocument.framework'
   spec.swift_version = '4.2'
 
