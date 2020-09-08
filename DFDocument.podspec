@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :http => 'https://github.com/anandramdeo-df/df-documents/releases/download/1.0.14/DFDocument.zip' }
   
-  spec.ios.deployment_target = '13.0'
+  spec.ios.deployment_target = '11.0'
   spec.ios.vendored_frameworks = 'DFDocument.framework'
   spec.swift_version = '4.2'
 
