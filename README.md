@@ -84,7 +84,28 @@ pod install
                         }
                     }
                 })
+                
+- For offline Passport data extraction with Live Camera.
 
+        let documentCapture = DFDocument.sharedInstance
+
+        documentCapture.getPassportDataWithLiveCamera(success: { response, passportImage, faceImage, errorList  in
+            self.textTextView.text = response?.description
+            self.faceImage.image = faceImage
+            self.textTextView.text += errorList?.joined(separator: " ") ?? ""
+        }, failure: { (error) in
+            print(error?.userInfo ?? "Your api token is not valid")
+        })
+                
+- For offline Emirates ID data extraction with Live Camera.
+
+        let documentCapture = DFDocument.sharedInstance
+        documentCapture.getEmiratedIdDataWithLiveCamera(success: { (frontData, backData, frontImage, backImage, faceImage, errorList) in
+            print("FrontData: \(frontData)")
+            print("FrontData: \(backData)")
+        }, failure: { (error) in
+            print(error?.userInfo ?? "Your api token is not valid")
+        })
 <br>
 <br>
 <p align="left">
