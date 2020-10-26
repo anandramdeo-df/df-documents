@@ -172,6 +172,16 @@ Updated UI output would be:
   
 <br>
 
+If you are using the live camera these are the Outputs:
+<br>
+<p align="left">
+<img src="images/config/video_live_without_capture.jpg" width="200"/> 
+<img src="images/config/video_live_without_capture.jpg" width="200"/>
+<img src="images/config/video_live_capture.jpg" width="200"/>  
+<br>
+ 
+ In the similar way you can scan the back also.
+
 <h2>Here are the list of all the configurable properties, you may need:</h2>
 
     /** This property change the background colour of the guidance screen. */
