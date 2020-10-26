@@ -175,7 +175,7 @@ Updated UI output would be:
 If you are using the live camera these are the Outputs:
 <br>
 <p align="left">
-<img src="images/document-capture/video_live_without_capture.jpg" width="200"/> 
+<img src="images/document-capture/video_live_without_capture_empty.jpg" width="200"/> 
 <img src="images/document-capture/video_live_without_capture.jpg" width="200"/>
 <img src="images/document-capture/video_live_capture.jpg" width="200"/>  
 <br>
