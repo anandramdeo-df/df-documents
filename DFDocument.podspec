@@ -140,7 +140,7 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-    spec.dependency "Firebase/MLVision"
-	  spec.dependency "Firebase/MLVisionTextModel"
+    spec.dependency "Firebase"
+	  spec.dependency "GoogleMLKit/TextRecognition"
 
 end
