@@ -100,7 +100,6 @@
 				65F279A415B0AF6CFBD5AF2A /* Pods-DocumentCaptureDemo.debug.xcconfig */,
 				02C1140AB5DA5A75AC03F9DF /* Pods-DocumentCaptureDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,7 +115,8 @@
 				414D2782216CDF8500A51B72 /* Frameworks */,
 				414D2783216CDF8500A51B72 /* Resources */,
 				416CFB9F21AEAE6700610B90 /* Embed Frameworks */,
-				FAC7A795ED0CBA827071DA25 /* [CP] Embed Pods Frameworks */,
+				A4D2540A9EC9BCC53304A761 /* [CP] Embed Pods Frameworks */,
+				112D00BB0EC0C4D56B1C9254 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +174,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		112D00BB0EC0C4D56B1C9254 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentCaptureDemo/Pods-DocumentCaptureDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentCaptureDemo/Pods-DocumentCaptureDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocumentCaptureDemo/Pods-DocumentCaptureDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8052E6812CB58A19BB698E8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,7 +213,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FAC7A795ED0CBA827071DA25 /* [CP] Embed Pods Frameworks */ = {
+		A4D2540A9EC9BCC53304A761 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,7 +397,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.df.documentCaptureSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.datafornix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b330748b-de6a-4d44-bed6-2ce9e18fe911";
 				PROVISIONING_PROFILE_SPECIFIER = RanosysWildcardDev;
@@ -409,10 +426,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.df.documentCaptureSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranosys.datafornix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d0240ff6-5d5e-4257-af5c-5d797daea943";
-				PROVISIONING_PROFILE_SPECIFIER = "D&A_Admin";
+				PROVISIONING_PROFILE_SPECIFIER = DF_InHouse;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
